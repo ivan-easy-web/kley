@@ -1,0 +1,400 @@
+
+
+/* сontent */
+
+.content {
+    display: flex;
+    padding-top: 70px;
+}
+
+@media (max-width: 1099px) {
+    .content {
+        display: block;
+    }
+}
+
+.content-column {
+    overflow-y: scroll;
+    height: calc(100vh - 70px);
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.content-column::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* left-column */
+
+
+.left-column {
+    padding-right: 7vw;
+}
+
+.block {
+    margin-bottom: 77px;
+}
+
+.contacts p {
+    margin-bottom: 25px;
+}
+
+
+.contacts {
+    margin-bottom: 35px;
+}
+
+.bottom-block {
+    margin-bottom: 35px;
+}
+
+
+/* right-column */
+
+.right-column {
+    min-width: 66%;
+    padding-bottom: 35px;
+} 
+
+@media (max-width: 1099px) {
+    .right-column {
+        height: fit-content;
+    }
+}
+
+.main-block {
+    background-color: rgba(10, 10, 10, 1);
+}
+
+.padding-content {
+    padding: 35px;
+}
+
+.logo {
+    height: 548px;
+    background-color: white;
+}
+
+.menu {
+    display: flex;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 1);
+;
+}
+
+.menu .item{
+    display: block;
+    width: 33.333333%;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin: 0;
+    padding-top: 13px;
+    padding-left: 36px;
+    height: 89px;
+}
+
+.menu .item:first-child:hover {
+    background-color: #9DABDD;
+    text-decoration: none;
+}
+
+.menu .item:nth-child(2):hover {
+    background-color: #DB9C96;
+    text-decoration: none;
+}
+
+.menu .item:nth-child(3):hover {
+    background-color: #C39AD8;
+    text-decoration: none;
+}
+
+
+.menu .bordered {
+    border: 1px solid white;
+}
+
+.menu .item {
+    margin: 0;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24.52px;
+}
+
+.menu .item:hover {
+    text-decoration: underline;
+}
+
+.menu .item:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 1099px) {
+    .menu {
+        display: block;
+        border-bottom: 1px solid white;
+        position: relative;
+    }
+
+    .menu .item {
+        width: 100%;
+        border-bottom: none;
+        padding-top: 15px;
+        padding-left: 20px;
+        height: 78px;
+    }
+
+    .menu .bordered {
+        border-left: none;
+        border-right: none;
+    }
+
+    .logo-wrapper {
+        display: none;
+    }
+}
+
+@media (max-width: 979px) {
+    .padding-content {
+        padding: 20px;
+    }
+}
+
+
+.text-block {
+    display: flex;
+}
+
+.text-column:first-child {
+    width: calc(62% - 30px);
+}
+
+@media (max-width: 979px) {
+    .text-block {
+        display: block;
+    }
+
+    .text-column {
+        width: 100%;
+    }
+}
+
+.imgs {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.img-row {
+    width: 100%;
+    display: flex;
+}
+
+.img {
+    background-position: center;
+    background-size: cover;
+    height: 20vw;
+    min-height: 350px;
+    border-radius: 32px;
+    border: 1px solid #0A0A0A;
+    margin-top: -20px;
+    z-index: 10;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.img video {
+    border-radius: 32px;
+}
+
+.img-row .img:first-child {
+    width: 60%;
+}
+
+.img-row .img:nth-child(2) { /* 40.949027% */
+    width: 42%;
+    margin-left: -2%;
+}
+
+.imgs .img:nth-child(2n) {
+    z-index: 9;
+}
+
+
+.imgs .img:hover {
+    z-index: 12;
+}
+
+@media (max-width: 412px) {
+    .imgs .caption {
+        width: calc(100% - 10px) !important;
+        min-width: unset !important;
+        margin: 5px !important;
+    }
+}
+
+@media (max-width: 979px) {
+    .imgs .img {
+        border-radius: 20px !important;
+    }
+}
+
+.imgs .caption {
+    margin: 25px;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #0A0A0A;
+    width: 228px;
+    min-height: 95px;
+    height: fit-content;
+    position: absolute;
+    opacity: 0;
+}
+
+.imgs .caption h6{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24.52px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.imgs .caption p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24.52px;
+    margin-top: 0;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 12px;
+}
+
+
+.imgs .img:hover .caption {
+    opacity: 1;
+}
+
+
+
+.p-right {
+    right: 0;
+}
+
+.p-bottom {
+    bottom: 0;
+}
+
+
+
+@media (max-width: 979px) {
+    .img-row {
+        display: block;
+    }
+
+    .imgs .img {
+        width: 100% !important;
+        height: 60vw !important;
+        min-height: unset;
+        margin: 0 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .imgs .img-last {
+        margin-bottom: 0 !important;
+    }
+
+    .imgs {
+        margin-top: 0 !important;
+    }
+}
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+}
+
+.logo img {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+    height: 400px;
+    width: auto;
+}
+
+#logo {
+    transition: 200ms transform ease-out;
+    transform-style: preserve-3d;
+}
+
+#lofo-wrapper {
+    -webkit-perspective: 2000px;
+  perspective: 2000px;
+  -webkit-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+}
+
+
+
+
+@keyframes slime-x {
+    0% {
+        transform: scale3d(1,1,1);
+    }
+
+    50% {
+        transform: scale3d(1.2, 1, 1);
+    }
+}
+
+@keyframes slime-y {
+    0% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(1.2);
+    }
+}
+
+.logo-i {
+    animation:  linear 4s infinite slime-x;
+    width: fit-content;
+    animation-play-state: paused;
+}
+
+.logo-i svg {
+    width: 100%;
+    height: auto;
+}
+
+.logo-i:nth-child(2) svg{
+    transform: translateY(-18px);
+}
+
+.logo-i:nth-child(3) svg{
+    transform: translateY(-3px);
+} 
+.logo-i:nth-child(4) svg{
+    transform: translateY(-1px);
+} 
+
+.logo-text {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 80%;
+    margin: auto;
+    font-size: 200px;
+    animation:  ease 7s infinite slime-y;
+
+}
+
+.running {
+    animation-play-state: running;
+}
