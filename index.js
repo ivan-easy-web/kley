@@ -69,10 +69,51 @@ logoWrapper.mouseleave((event) => {
 
 
 
-const items = $('.logo-i');
 
-items.each((index, item) => {
-    setTimeout(() => {
-        $(item).addClass('running');
-    }, index * 1000);
+
+
+
+
+// Create the application helper and add its render target to the page
+let app = new PIXI.Application({ width: 400, height: 300, backgroundAlpha: 0});
+logo.append(app.view);
+app.stage.interactive = true;
+
+
+
+
+
+
+// Create the sprite and add it to the stage
+let sprite = PIXI.Sprite.from('img/logo-final.png');
+
+let filterSprite = PIXI.Sprite.from('img/radial_gradient.png');
+app.stage.addChild(filterSprite);
+
+
+
+filterSprite.position.set(0, 0);
+filterSprite.anchor.set(0.5);
+
+
+let filter = new PIXI.filters.DisplacementFilter(filterSprite);
+sprite.filters = [filter];
+
+app.stage.addChild(sprite);
+
+
+var handler = function(e){
+  x = app.renderer.plugins.interaction.mouse.global.x;
+  y = app.renderer.plugins.interaction.mouse.global.y;
+  filterSprite.position.set(x, y);
+}
+
+app.stage.on("pointermove", handler);
+
+$(window).resize(() => {
+  app.renderer.view.style.width = window.innerWidth + "px";
+  app.renderer.view.style.height = window.innerHeight + "px";
+  sprite.position.x = (app.renderer.width / 2) - (sprite.width / 2);
+  sprite.position.y = (app.renderer.height / 2) - (sprite.height / 2);
+  app.renderer.resize(window.innerWidth ,window.innerHeight);
 })

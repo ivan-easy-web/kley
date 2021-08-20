@@ -320,13 +320,6 @@
     border-radius: 35px;
 }
 
-.logo img {
-    filter: invert(100%);
-    -webkit-filter: invert(100%);
-    height: 400px;
-    width: auto;
-}
-
 #logo {
     transition: 200ms transform ease-out;
     transform-style: preserve-3d;
@@ -362,39 +355,3 @@
     }
 }
 
-.logo-i {
-    animation:  linear 4s infinite slime-x;
-    width: fit-content;
-    animation-play-state: paused;
-}
-
-.logo-i svg {
-    width: 100%;
-    height: auto;
-}
-
-.logo-i:nth-child(2) svg{
-    transform: translateY(-18px);
-}
-
-.logo-i:nth-child(3) svg{
-    transform: translateY(-3px);
-} 
-.logo-i:nth-child(4) svg{
-    transform: translateY(-1px);
-} 
-
-.logo-text {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 80%;
-    margin: auto;
-    font-size: 200px;
-    animation:  ease 7s infinite slime-y;
-
-}
-
-.running {
-    animation-play-state: running;
-}
