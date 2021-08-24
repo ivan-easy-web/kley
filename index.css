@@ -321,15 +321,12 @@
 }
 
 #logo {
-    transition: 200ms transform ease-out;
+    transition: 1000ms transform ease-out;
     transform-style: preserve-3d;
 }
 
-#lofo-wrapper {
-    -webkit-perspective: 2000px;
-  perspective: 2000px;
-  -webkit-perspective-origin: 50% 50%;
-  perspective-origin: 50% 50%;
+#logo-wrapper:hover #logo {
+    transition: 200ms transform ease-out;
 }
 
 

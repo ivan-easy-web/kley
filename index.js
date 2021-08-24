@@ -3,12 +3,17 @@ let logoWrapper = $('#logo-wrapper')
 let logo = $('#logo');
 
 let time = Date.now();
-let lastX = 0;
-let lastY = 0;
+let lastX = -1;
+let lastY = -1;
 
 function move(e) {
     let x = e.pageX;
     let y = e.pageY;
+
+    if (lastX == -1 && lastY == -1) {
+      lastX = x;
+      lastY = y;
+    }
 
     let left = x - logoWrapper.offset().left;
     let top = y- logoWrapper.offset().top;
@@ -16,10 +21,10 @@ function move(e) {
     let width = logoWrapper.width();
     let height = logoWrapper.height();
 
-    let maxRotateX = 15;
-    let maxRotateY = 15;
-    let maxTranslateX = width / 10;
-    let maxTranslateY = width / 10;
+    let maxRotateX = 25;
+    let maxRotateY = 25;
+    let maxTranslateX = width / 5;
+    let maxTranslateY = width / 5;
 
 
     let currentTime = Date.now();
@@ -75,7 +80,7 @@ logoWrapper.mouseleave((event) => {
 
 
 // Create the application helper and add its render target to the page
-let app = new PIXI.Application({ width: 400, height: 300, backgroundAlpha: 0});
+let app = new PIXI.Application({ backgroundAlpha: 0});
 logo.append(app.view);
 app.stage.interactive = true;
 
@@ -85,7 +90,10 @@ app.stage.interactive = true;
 
 
 // Create the sprite and add it to the stage
-let sprite = PIXI.Sprite.from('img/logo-final.png');
+let sprite = PIXI.Sprite.from('img/logo-final.jpg');
+sprite.anchor.set(0.5);
+sprite.x = app.screen.width/2;
+sprite.y = app.screen.height/2;
 
 let filterSprite = PIXI.Sprite.from('img/radial_gradient.png');
 app.stage.addChild(filterSprite);
