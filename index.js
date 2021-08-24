@@ -24,7 +24,7 @@ function move(e) {
     let maxRotateX = 25;
     let maxRotateY = 25;
     let maxTranslateX = width / 5;
-    let maxTranslateY = width / 7;
+    let maxTranslateY = height / 5;
 
 
     let currentTime = Date.now();
