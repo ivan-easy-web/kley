@@ -130,11 +130,3 @@ var handler = function(e){
 }
 
 app.stage.on("pointermove", handler);
-
-$(window).resize(() => {
-  app.renderer.view.style.width = window.innerWidth + "px";
-  app.renderer.view.style.height = window.innerHeight + "px";
-  sprite.position.x = (app.renderer.width / 2) - (sprite.width / 2);
-  sprite.position.y = (app.renderer.height / 2) - (sprite.height / 2);
-  app.renderer.resize(window.innerWidth ,window.innerHeight);
-})
