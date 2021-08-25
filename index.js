@@ -23,8 +23,9 @@ function move(e) {
 
     let maxRotateX = 25;
     let maxRotateY = 25;
-    let maxTranslateX = width / 5;
+    let maxTranslateX = width / 3;
     let maxTranslateY = height / 5;
+    let maxSkew = 50;
 
 
     let currentTime = Date.now();
@@ -48,7 +49,19 @@ function move(e) {
     let rotateY = maxRotateY * coeffY;
     let translateY = maxTranslateY * coeffY;
     let skewX = -((moveX / timeDiff) * 15) *coeffY;
+    if (skewX > maxSkew) {
+      skewX = maxSkew;
+    }
+    if (skewX < -maxSkew) {
+      skewX = -maxSkew;
+    }
     let skewY = -((moveY / timeDiff) * 10) *coeffX;
+    if (skewY > maxSkew) {
+      skewY = maxSkew;
+    }
+    if (skewY < -maxSkew) {
+      skewY = -maxSkew;
+    }
     let scaleY = 1 + (Math.abs(moveY / timeDiff)) / 5;
 
     time = currentTime;
@@ -80,7 +93,7 @@ logoWrapper.mouseleave((event) => {
 
 
 // Create the application helper and add its render target to the page
-let app = new PIXI.Application({ backgroundAlpha: 0});
+let app = new PIXI.Application({ height: 200, width: 400, backgroundAlpha: 0});
 logo.append(app.view);
 app.stage.interactive = true;
 
@@ -90,7 +103,7 @@ app.stage.interactive = true;
 
 
 // Create the sprite and add it to the stage
-let sprite = PIXI.Sprite.from('img/logo-final.jpg');
+let sprite = PIXI.Sprite.from('img/logo-final.png');
 sprite.anchor.set(0.5);
 sprite.x = app.screen.width/2;
 sprite.y = app.screen.height/2;
@@ -100,7 +113,7 @@ app.stage.addChild(filterSprite);
 
 
 
-filterSprite.position.set(0, 0);
+filterSprite.position.set(-100, -100);
 filterSprite.anchor.set(0.5);
 
 
