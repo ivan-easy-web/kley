@@ -124,9 +124,9 @@ app.stage.addChild(sprite);
 
 
 var handler = function(e){
-  x = app.renderer.plugins.interaction.mouse.global.x;
-  y = app.renderer.plugins.interaction.mouse.global.y;
-  filterSprite.position.set(x, y);
+  //x = app.renderer.interaction.mouse.global.x;
+  //y = app.renderer.interaction.mouse.global.y;
+  filterSprite.position.set(e.screen.x, e.screen.y);
 }
 
 app.stage.on("pointermove", handler);
