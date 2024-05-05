@@ -11,9 +11,12 @@ The most important step was to select suitable libraries for implementing comple
 
 
 **Fetures:**
+
 + a lot of JavaScript animations, such as transitions between pages, moving background animations when scrolling etc
 + realistic animation of the main logo following cursor with Pixi.js
 
+
 **Links:**
+
 https://kleystudio.netlify.app
-Since the design is desktop-first, it's recommended to open it on desktop. Mobile version doesn't contain some interesting animations.
+!note Since the design is desktop-first, it's recommended to open it on desktop. Mobile version doesn't contain some interesting animations.
